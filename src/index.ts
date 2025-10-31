@@ -19,6 +19,9 @@ app.set("view engine", "ejs");
 import { loginRouter } from "./routes/loginRouter.js";
 app.use("/login", loginRouter);
 
+import { salesRouter } from "./routes/salesRouter.js";
+app.use("/sales", salesRouter);
+
 app.get("/", (req: Request, res: Response) => {
   res.send("Hello, World!");
 });

@@ -13,7 +13,3 @@ export const loginController = async (
     next(err);
   }
 };
-
-export default {
-  loginController,
-};
