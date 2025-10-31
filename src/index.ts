@@ -1,23 +1,23 @@
-const path: typeof import("node:path") = require("node:path");
-const express: typeof import("express") = require("express");
+import path from "node:path";
+import express, {
+  type Application,
+  type Request,
+  type Response,
+  type Router,
+} from "express";
 
-import type { Application } from "express";
-import type { Request, Response, NextFunction } from "express";
+import { fileURLToPath } from "node:url";
 
 const app: Application = express();
-
 const port: number = 3000;
 
-app.set("views", path.join(__dirname, "views"));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+app.set("views", path.join(__dirname, "../src/views"));
 app.set("view engine", "ejs");
 
-app.use("/", express.static(path.join(__dirname, "public")));
-
-/*
-Router Pattern
-import type { Router } from "express";
-const foodsRouter: Router = require("./routes/v1/foodsRouter");
-*/
+import { loginRouter } from "./routes/loginRouter.js";
+app.use("/login", loginRouter);
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Hello, World!");
