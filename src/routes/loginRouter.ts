@@ -18,7 +18,7 @@ loginRouter.post("/", (req, res) => {
     const token = sign({ username }, "secret_key", {
       expiresIn: "1h",
     });
-    res.json({ token });
+    res.redirect(`/sales?token=${token}`);
   } else {
     res.status(401).json({ message: "Invalid username or password" });
   }
