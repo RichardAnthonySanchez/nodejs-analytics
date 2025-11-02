@@ -18,6 +18,8 @@ const __dirname = path.dirname(__filename);
 app.set("views", path.join(__dirname, "../src/views"));
 app.set("view engine", "ejs");
 
+app.use(express.static(path.join(__dirname, "../src/public")));
+
 import { loginRouter } from "./routes/loginRouter.js";
 app.use("/login", loginRouter);
 
