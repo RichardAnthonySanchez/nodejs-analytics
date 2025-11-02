@@ -1,11 +1,16 @@
-<div class="card card-border bg-base-100 w-96">
+<div class="card w-full max-w-sm bg-base-100 shadow-xl">
   <div class="card-body">
     <h2 class="card-title">Profit By Agent</h2>
-    <ul>
+    <ul class="space-y-2">
       <% agentPerformance.forEach(agent => { %>
-      <li>
-        <strong><%= agent.agent %></strong>: $<%= agent.profit %> (Count: <%=
-        agent.count %>)
+      <li class="flex justify-between items-center">
+        <span class="font-semibold"><%= agent.agent %></span>
+        <span
+          >$<%= agent.profit %>
+          <span class="text-sm text-gray-500"
+            >(Count: <%= agent.count %>)</span
+          ></span
+        >
       </li>
       <% }) %>
     </ul>

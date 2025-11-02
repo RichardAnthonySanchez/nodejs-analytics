@@ -1,9 +1,12 @@
-<div class="card card-border bg-base-100 w-96">
+<div class="card w-full max-w-sm bg-base-100 shadow-xl">
   <div class="card-body">
     <h2 class="card-title">Profit By Role</h2>
-    <ul>
+    <ul class="space-y-2">
       <% roleProfits.forEach(rp => { %>
-      <li><%= rp.role %>: $<%= rp.totalProfit.toFixed(2) %></li>
+      <li class="flex justify-between items-center">
+        <span class="font-semibold"><%= rp.role %></span>
+        <span>$<%= rp.totalProfit.toFixed(2) %></span>
+      </li>
       <% }) %>
     </ul>
   </div>
