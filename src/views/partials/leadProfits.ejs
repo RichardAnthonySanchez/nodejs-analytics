@@ -1,0 +1,13 @@
+<div class="card card-border bg-base-100 w-96">
+  <div class="card-body">
+    <h2 class="card-title">Profit by Lead Source</h2>
+    <ul>
+      <% leadProfit.forEach(item => { %>
+      <li>
+        <strong><%= item.lead %></strong>: $<%=
+        item.totalProfit.toLocaleString() %>
+      </li>
+      <% }) %>
+    </ul>
+  </div>
+</div>

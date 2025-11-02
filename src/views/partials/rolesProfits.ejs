@@ -1,0 +1,10 @@
+<div class="card card-border bg-base-100 w-96">
+  <div class="card-body">
+    <h2 class="card-title">Profit By Role</h2>
+    <ul>
+      <% roleProfits.forEach(rp => { %>
+      <li><%= rp.role %>: $<%= rp.totalProfit.toFixed(2) %></li>
+      <% }) %>
+    </ul>
+  </div>
+</div>
