@@ -8,8 +8,8 @@ export const loginRouter = Router();
 
 loginRouter.get("/", loginController);
 
-const ADMIN_USERNAME = "admin";
-const ADMIN_PASSWORD = "password";
+const ADMIN_USERNAME = "safeship";
+const ADMIN_PASSWORD = "imhiringtony";
 
 loginRouter.post("/", (req, res) => {
   const { username, password } = req.body;
