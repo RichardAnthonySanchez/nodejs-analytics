@@ -1,11 +1,17 @@
 <div class="card w-full max-w-sm bg-base-100 shadow-xl">
   <div class="card-body">
-    <h2 class="card-title">Profit By Role</h2>
+    <h2
+      class="card-title mb-4 text-xl font-semibold text-gray-800 border-b-2 border-gray-200 pb-2"
+    >
+      Profit By Role 🧑‍💼
+    </h2>
     <ul class="space-y-2">
       <% roleProfits.forEach(rp => { %>
-      <li class="flex justify-between items-center">
+      <li
+        class="flex justify-between items-center border-b border-gray-200 pb-2"
+      >
         <span class="font-semibold"><%= rp.role %></span>
-        <span>$<%= rp.totalProfit.toFixed(2) %></span>
+        <span>$<%= rp.totalProfit.toLocaleString() %></span>
       </li>
       <% }) %>
     </ul>

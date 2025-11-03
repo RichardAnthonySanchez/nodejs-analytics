@@ -1,16 +1,20 @@
 <div class="card w-full max-w-sm bg-base-100 shadow-xl">
   <div class="card-body">
-    <h2 class="card-title">Profit By Agent</h2>
+    <h2
+      class="card-title mb-4 text-xl font-semibold text-gray-800 border-b-2 border-gray-200 pb-2"
+    >
+      Profit By Agent 👩‍💻
+    </h2>
     <ul class="space-y-2">
       <% agentPerformance.forEach(agent => { %>
-      <li class="flex justify-between items-center">
+      <li
+        class="flex justify-between items-center border-b border-gray-200 last:border-b-0 pb-2"
+      >
         <span class="font-semibold"><%= agent.agent %></span>
-        <span
-          >$<%= agent.profit %>
-          <span class="text-sm text-gray-500"
-            >(Count: <%= agent.count %>)</span
-          ></span
-        >
+        <span>
+          $<%= agent.profit.toLocaleString() %>
+          <span class="text-sm text-gray-500">(Sales: <%= agent.count %>)</span>
+        </span>
       </li>
       <% }) %>
     </ul>

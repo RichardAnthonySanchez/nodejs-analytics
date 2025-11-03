@@ -1,9 +1,15 @@
 <div class="card w-full max-w-sm bg-base-100 shadow-xl">
   <div class="card-body">
-    <h2 class="card-title">Profit by Lead Source</h2>
+    <h2
+      class="card-title mb-4 text-xl font-semibold text-gray-800 border-b-2 border-gray-200 pb-2"
+    >
+      Profit by Lead Source 🌐
+    </h2>
     <ul class="space-y-2">
       <% leadProfit.forEach(item => { %>
-      <li class="flex justify-between items-center">
+      <li
+        class="flex justify-between items-center border-b border-gray-200 last:border-b-0 pb-2"
+      >
         <span class="font-semibold"><%= item.lead %></span>
         <span>$<%= item.totalProfit.toLocaleString() %></span>
       </li>
