@@ -17,8 +17,7 @@ export function getRoleProfit(
     profitMap.set(role, (profitMap.get(role) ?? 0) + sale.profit);
   }
 
-  return Array.from(profitMap.entries()).map(([role, totalProfit]) => ({
-    role,
-    totalProfit,
-  }));
+  return Array.from(profitMap.entries())
+    .map(([role, totalProfit]) => ({ role, totalProfit }))
+    .sort((a, b) => b.totalProfit - a.totalProfit);
 }

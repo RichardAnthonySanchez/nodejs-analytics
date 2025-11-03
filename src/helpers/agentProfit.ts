@@ -2,6 +2,13 @@ import { SaleRecord } from "../types/sales";
 import { normalizeString } from "../utils/normalizeString.js";
 import { AgentPerformance } from "../types/agents";
 
+function capitalizeName(name: string): string {
+  return name
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(" ");
+}
+
 export const getAgentPerformance = (
   sales: SaleRecord[]
 ): AgentPerformance[] => {
@@ -26,5 +33,9 @@ export const getAgentPerformance = (
     }
   }
 
-  return result;
+  result.forEach((r) => {
+    r.agent = capitalizeName(r.agent);
+  });
+
+  return result.sort((a, b) => b.profit - a.profit);
 };
